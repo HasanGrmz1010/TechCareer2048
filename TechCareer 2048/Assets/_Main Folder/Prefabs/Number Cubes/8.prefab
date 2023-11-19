@@ -134,6 +134,7 @@ TrailRenderer:
   m_Materials:
   - {fileID: 2100000, guid: f0b8fb3ecbc2cb048825486e3d63f1ba, type: 2}
   - {fileID: 2100000, guid: bd8728c523aee044a962fccad8ca32e8, type: 2}
+  - {fileID: 2100000, guid: ccf4748f8fcb76842b8aed4ebcaffbfd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

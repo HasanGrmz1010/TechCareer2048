@@ -101,13 +101,14 @@ public class MouseActionsManager : MonoBehaviour
                 {
                     Slot slot_sc = LastRayHit.transform.GetComponent<Slot>();
                     int new_number = slot_sc.GetNumber() * 2;
-
+                    CamShake();
                     CurrentCube.transform.DOScale(.1f, .3f).SetEase(Ease.OutCirc);
                     CurrentCube.transform.DOMoveY(CurrentCube.transform.position.y - 2f, 0.3f).SetEase(Ease.OutElastic).OnComplete(() =>
                     {
                         Destroy(CurrentCube);
                         slot_sc.ChangePNG((slot_sc.GetNumber() * 2));
                         slot_sc.SetValues(true, new_number);
+                        //CamShake();
                     });
                 }
                 else // Numbers don't match
@@ -145,6 +146,11 @@ public class MouseActionsManager : MonoBehaviour
 
 
         }
+    }
+
+    void CamShake()
+    {
+        Camera.main.transform.DOShakePosition(1f, strength: 0.3f, vibrato: 20, randomness: 90);
     }
 
 }
